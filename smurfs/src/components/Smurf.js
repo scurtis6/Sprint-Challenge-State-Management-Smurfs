@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchSmurf } from '../actions';
+import SmurfForm from './SmurfForm';
 
 const Smurf = (props) => {
     console.log(props)
