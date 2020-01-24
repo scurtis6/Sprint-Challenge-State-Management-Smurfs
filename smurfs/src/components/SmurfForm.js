@@ -51,7 +51,7 @@ const SmurfForm = (props) => {
                 name='height'
                 placeholder='Enter Height'
                 value={newSmurf.height} 
-                onChange={handleChanges} />
+                onChange={handleChanges} /> <br />
                 <button className='submit-btn' type='sumbit'>Create New Smurf</button>
             </form>
         </div>
