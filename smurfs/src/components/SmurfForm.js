@@ -7,6 +7,14 @@ const SmurfForm = (props) => {
         height: ''
     });
 
+    const handleChanges = e => {
+        e.preventDefault();
+        setNewSmurf({
+            ...newSmurf,
+            [e.target.name]: e.target.value
+        });
+    };
+
     return (
         <div>
             <form>
@@ -14,19 +22,20 @@ const SmurfForm = (props) => {
                 type='text'
                 name='name'
                 placeholder='Enter Name'
-                value={newSmurf.name} />
+                value={newSmurf.name}
+                onChange={handleChanges} />
                 <input
-                type='number'
-                name='quantity'
-                min='1'
-                max='9999'
+                type='text'
+                name='age'
                 placeholder='Enter Age'
-                value={newSmurf.age} />
+                value={newSmurf.age}
+                onChange={handleChanges} />
                 <input
                 type='text'
                 name='height'
                 placeholder='Enter Height'
-                value={newSmurf.height} />
+                value={newSmurf.height} 
+                onChange={handleChanges} />
             </form>
             <button className='submit-btn' type='sumbit'>Create New Smurf</button>
         </div>
