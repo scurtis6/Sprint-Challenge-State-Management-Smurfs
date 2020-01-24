@@ -1,7 +1,8 @@
 // reducers index
-import { FETCHING_SMURF } from '../actions';
-import { FETCHING_SMURF_SUCCESS } from '../actions';
-import { FETCHING_SMURF_FAILURE } from '../actions';
+import { FETCHING_SMURF, FETCHING_SMURF_SUCCESS, FETCHING_SMURF_FAILURE } from '../actions';
+import { POST_SMURF, POST_SMURF_SUCCESS, POST_SMURF_FAILURE } from '../actions';
+;
+
 
 const initialState = {
     smurf: [],
@@ -28,6 +29,23 @@ const smurfReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetching: false,
+                err: action.payload
+            };
+        case POST_SMURF:
+            return {
+                ...state,
+                isFetching: true
+            };
+        case POST_SMURF_SUCCESS:
+            return {
+                ...state,
+                isFetching: false,
+                smurf: action.payload
+            };
+        case POST_SMURF_FAILURE:
+            return {
+                ...state,
+                isFetching: true,
                 err: action.payload
             };
         default:
