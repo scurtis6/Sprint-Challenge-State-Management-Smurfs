@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addSmurf } from '../actions';
 
 const SmurfForm = (props) => {
+    const dispatch = useDispatch();
+    console.log(props)
     const [newSmurf, setNewSmurf] = useState({
         name: '',
         age: '',
@@ -8,16 +12,28 @@ const SmurfForm = (props) => {
     });
 
     const handleChanges = e => {
-        e.preventDefault();
         setNewSmurf({
             ...newSmurf,
             [e.target.name]: e.target.value
         });
+        console.log(e.target)
     };
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        dispatch(addSmurf(newSmurf));
+        // props.addSmurf(newSmurf);
+        // setNewSmurf({
+        //     name: '',
+        //     age: '',
+        //     height: ''
+        // });
+;
+    }
 
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input
                 type='text'
                 name='name'
@@ -36,8 +52,8 @@ const SmurfForm = (props) => {
                 placeholder='Enter Height'
                 value={newSmurf.height} 
                 onChange={handleChanges} />
+                <button className='submit-btn' type='sumbit'>Create New Smurf</button>
             </form>
-            <button className='submit-btn' type='sumbit'>Create New Smurf</button>
         </div>
     );
 };

@@ -33,6 +33,6 @@ export const addSmurf = (newSmurf) => dispatch => {
     })
     .catch(err => {
         console.log(err);
-        dispatch({ type: POST_SMURF_FAILURE, payload: err.response})
+        dispatch({ type: POST_SMURF_FAILURE, payload: err})
     });
 }
