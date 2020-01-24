@@ -21,6 +21,7 @@ const Smurf = (props) => {
                     </div>
                 ))}
             </div>
+            <SmurfForm />
         </div>
     )
 };
