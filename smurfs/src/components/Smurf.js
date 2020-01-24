@@ -10,12 +10,22 @@ const Smurf = (props) => {
     }, [pushSmurfs])
 
     return (
-        <div></div>
+        <div className="smurf">
+            <div>
+                {props.smurf.map(smurf => (
+                    <div className='smurf-data' key={smurf.id}>
+                        <p>Name: {smurf.name}</p>
+                        <p>Age: {smurf.age}</p>
+                        <p>Height: {smurf.height}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
     )
 };
 
 const mapStateToProps = state => {
-    console.log(state)
+    console.log(state, state.smurf)
     return({
         smurf: state.smurf,
         error: state.error
