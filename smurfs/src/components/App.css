@@ -1,28 +1,47 @@
 .App {
   text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: lightgray;
+  padding: 1% 4% 5% 4%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.smurf-data:nth-of-type(odd) {
+  background-color: #000;
   color: white;
+  padding: 1% 0;
+  text-align: left;
+  padding-left: 15%;
+  border: 15px solid gray;
+  font-size: 1.2rem;
+}
+.smurf-data:nth-of-type(even) {
+  background-color: gray;
+  color: white;
+  padding: 1% 0;
+  text-align: right;
+  padding-right: 15%;
+  border: 15px solid black;
+  font-size: 1.2rem;
 }
 
-.App-title {
-  font-size: 1.5em;
+form {
+  margin-top: 5%;
 }
 
-.App-intro {
-  font-size: large;
+form input {
+  font-size: 1.8rem;
+  margin-bottom: 1%;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.submit-btn {
+  background-color: black;
+  color: white;
+  padding: 2% 4%;
+  margin-top: 3%;
+}
+
+.submit-btn:hover {
+  background-color: lightgray;
+  color: black;
 }
